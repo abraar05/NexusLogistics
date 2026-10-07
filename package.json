@@ -1,0 +1,11 @@
+{
+  "name": "nexuslogistics",
+  "version": "1.0.0",
+  "description": "NexusLogistics — Nexus suite workspace.",
+  "private": true,
+  "scripts": {
+    "start": "python3 -m http.server 8803 --bind 127.0.0.1",
+    "serve": "npx --yes http-server -p 8803 -c-1",
+    "check": "node --check js/auth.js && node --check js/config.js && node --check js/app.js"
+  }
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-theme="graphite" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080a0f">
+<title>NexusLogistics — Logistics</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="login"><div class="logincard"><div class="brand" style="padding:0 0 14px"><div class="logo">N</div><div><b>NEXUS SUITE</b><small>Demo sign-in</small></div></div>
+<input id="login-email" placeholder="Email" value="admin@teamnexus.app">
+<input id="login-pass" type="password" placeholder="Password">
+<div id="login-err"></div>
+<button class="btn primary" style="width:100%" onclick="nexusLogin()">Sign in</button>
+<p class="muted" style="font-size:11px;margin-top:12px">Demo credentials: <b>admin@teamnexus.app</b> / <b>Nexus@2026</b></p></div></div>
+
+<div class="app">
+<aside class="side">
+ <div class="brand"><div class="logo">N</div><div><b>NEXUSLOGISTICS</b><small>Dedicated Workspace</small></div></div>
+ <div class="workspace"><b>Ahana Trading</b><small>Bangladesh · Enterprise</small></div>
+ <div class="navlabel">Workspace</div>
+ <nav class="nav">
+  <button class="active" data-page="home"><i class="ico">◈</i><span>Control tower</span></button>
+  <button data-page="shipments"><i class="ico">▦</i><span>Shipments</span></button>
+  <button data-page="routes"><i class="ico">↝</i><span>Routes</span></button>
+  <button data-page="warehouses"><i class="ico">▤</i><span>Warehouses</span></button>
+  <button data-page="fleet"><i class="ico">⛟</i><span>Fleet</span></button>
+  <button data-page="carriers"><i class="ico">◈</i><span>Carriers</span></button>
+  <button data-page="exceptions"><i class="ico">!</i><span>Exceptions</span></button>
+  <button data-page="analytics"><i class="ico">◴</i><span>Analytics</span></button>
+ </nav>
+ <div class="navlabel">System</div>
+ <nav class="nav">
+  <button data-page="settings"><i class="ico">⚙</i><span>Settings</span></button>
+  <button data-toast="Help & docs opened"><i class="ico">◉</i><span>Help & docs</span></button>
+ </nav>
+</aside>
+<main class="main">
+<header class="top"><div class="crumb" id="crumb">Logistics</div><div class="search">⌕ &nbsp; Search or use <kbd>⌘ K</kbd></div><div class="actions"><button class="icon" onclick="openAI()">✦</button><button class="icon" data-toast="No new notifications">♢</button><button class="icon" onclick="toggleMode()">◐</button></div></header>
+<section class="content">
+<div id="home" class="page active">
+<div class="hero"><div><h1>Logistics Control Tower</h1><p>Plan, track and resolve every movement from supplier to warehouse to customer.</p></div><div class="actions"><button class="btn" data-toast="Live map opened">Live map</button><button class="btn primary" data-toast="Shipment form opened">＋ Create shipment</button></div></div>
+<div class="grid kpis"><div class="card kpi"><small>Shipments in motion</small><div class="metric">126</div><div class="trend">98% on schedule</div></div><div class="card kpi"><small>In transit value</small><div class="metric">৳22.8M</div><div class="trend">↑ 6.4% today</div></div><div class="card kpi"><small>Delivery success</small><div class="metric">97.4%</div><div class="trend">Best in 90 days</div></div><div class="card kpi"><small>Exceptions</small><div class="metric">9</div><div class="trend bad">3 critical</div></div></div>
+<div class="grid split"><div class="card"><div class="head"><h3>Network movement</h3><span class="pill good">Live</span></div><div class="map"><div class="node" style="left:23%;top:64%"></div><div class="node" style="left:52%;top:37%"></div><div class="node" style="left:75%;top:57%"></div><div class="route" style="left:24%;top:65%;width:34%;transform:rotate(-27deg)"></div><div class="route" style="left:53%;top:39%;width:26%;transform:rotate(24deg)"></div><div style="position:absolute;left:18%;top:69%;font-size:10px;color:var(--muted)">Chattogram</div><div style="position:absolute;left:48%;top:28%;font-size:10px;color:var(--muted)">Dhaka Hub</div><div style="position:absolute;left:71%;top:61%;font-size:10px;color:var(--muted)">Sylhet</div></div></div>
+<div class="card"><div class="head"><h3>Exceptions cockpit</h3><span class="pill bad">9</span></div><div class="body"><div class="metricrow"><b>PO-1982</b><span class="bad">Delayed 6h</span></div><div class="metricrow"><b>TRK-449</b><span class="warn">Customs hold</span></div><div class="metricrow"><b>SO-48271</b><span class="warn">Address issue</span></div><div class="metricrow"><b>CN-8802</b><span class="good">Resolved</span></div></div></div></div>
+<div class="card" style="margin-top:12px"><div class="head"><h3>Shipment flow</h3><button class="btn" data-toast="Filter options">Filter</button></div><div class="tablewrap"><table class="table"><tr><th>Shipment</th><th>Route</th><th>Units</th><th>ETA</th><th>Carrier</th><th>Status</th></tr><tr><td><b>TR-92841</b></td><td>Chattogram → Dhaka</td><td>480</td><td>Today 18:20</td><td>Pathao Logistics</td><td><span class="pill good">On route</span></td></tr><tr><td><b>TR-92836</b></td><td>Dhaka → Sylhet</td><td>160</td><td>Tomorrow 10:00</td><td>Steadfast</td><td><span class="pill good">On route</span></td></tr><tr><td><b>TR-92822</b></td><td>Chattogram → Dhaka</td><td>820</td><td>Delayed 6h</td><td>RedX</td><td><span class="pill bad">Exception</span></td></tr></table></div></div>
+</div>
+<div id="generated" class="page"></div>
+</section></main></div>
+
+<div class="drawer" id="drawer" onclick="if(event.target===this)closeAI()"><div class="drawerpanel"><div class="drawerhead"><div><div class="muted" style="font-size:10px;text-transform:uppercase;letter-spacing:.1em">Local intelligence</div><h2>Network Copilot</h2></div><button class="icon" onclick="closeAI()">×</button></div><p class="muted">Private, context-aware assistance over shipments, routes, fleet and exceptions.</p><div class="aiinput" style="margin-top:20px"><input id="q" placeholder="Ask: “Which lane is most delayed?”"><button class="send" onclick="answer()">↑</button></div><div id="answer" class="airesponse">Try asking about ETA risks, exceptions, carrier performance or lane costs.</div><div class="insight" style="margin-top:18px"><b>Suggested</b>“Which shipments risk missing their ETA today?”</div><div class="insight"><b>Suggested</b>“Where is dock dwell above 48 hours?”</div></div></div>
+
+<script src="js/auth.js"></script>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
